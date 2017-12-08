@@ -85,6 +85,7 @@ for each ∈ the_good_ones
     end
 end
 for page ∈ pages
+    sleep(rand()*200)
     r = get("https://www.yelp.com/biz/"*k*"?start=$page")
     h = parsehtml(String(copy(r.data)))
     reviews = matchall(Selector("div[itemprop^='review']"),h.root)
